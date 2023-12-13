@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form action="" method="post">
+      <div>
+        <div>
+          <input
+            type="email"
+            name="useremail"
+            placeholder="oz@example.com"
+            name="email"
+            size="20"
+            required
+          />
+        </div>
+        <div>
+          <input type="text" name="username" placeholder="홍길동" required />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="userpw"
+            placeholder="비밀번호 입력"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            name="userpw2"
+            placeholder="다시 입력"
+            required
+          />
+        </div>
+        <div>
+          <input type="number" maxlength="3" id="usernumber1" required /> -
+          <input type="number" maxlength="4" id="usernumber2" required /> -
+          <input type="number" maxlength="4" id="usernumber3" required />
+          <button id="인증번호" disabled>인증번호 전송</button>
+          <div>
+            <input
+              type="number"
+              maxlength="6"
+              placeholder="인증번호"
+              readonly
+            />
+            <button id="인증번호확인" disabled>확인</button>
+            <span>3:00</span>
+          </div>
+        </div>
+        <div>
+          <select name="area">
+            <option value="">지역을 선택해주세요</option>
+            <option value="1">서울</option>
+            <option value="2">대구</option>
+            <option value="3">강남</option>
+          </select>
+        </div>
+        <div>
+          <input type="radio" name="sex" id="female" />
+          <label for="female">여성</label>
+          <input type="radio" name="sex" id="male" />
+          <label for="male">남성</label>
+        </div>
+        <div>
+          <input type="submit" value="가입하기" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

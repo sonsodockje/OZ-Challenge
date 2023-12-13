@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  background-color: rgb(166, 99, 166);
+  position: relative;
+}
+
+.chat-screen {
+  height: calc(100% - 120px);
+}
+
+.chat-screen-bar {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+.user {
+  background-color: white;
+  padding: 15px;
+  height: 80px;
+}
+.user-column {
+  display: inline-block;
+}
+.user-pic {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(166, 99, 166);
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.user-name,
+.user-count {
+  position: relative;
+  top: -7px;
+  margin-bottom: 5px;
+}
+.user-count {
+  font-size: 12px;
+  color: rgb(152, 152, 152);
+}
+
+.chat-form {
+  height: 120px;
+  background-color: white;
+}
+.chat-form-field {
+  height: 100%;
+}
+.chat-form-msg {
+  width: calc(100% - 120px);
+  height: 100%;
+  border: none;
+  resize: none;
+  font-size: 24px;
+  padding: 10px;
+}
+.chat-form-msg:focus {
+  outline: none;
+}
+.chat-form-bt {
+  height: 100%;
+  width: 120px;
+  border-radius: 10px;
+  float: right;
+  background-color: rgb(34, 34, 34);
+  color: aliceblue;
+  font-size: 18px;
+  border: none;
+}
+.chat-form-bt:active {
+  background-color: black;
+}
+
+main {
+  overflow: scroll;
+}
+
+.chat-screen-texts {
+  margin-top: 90px;
+}
+.chat-screen-texts {
+  padding: 0;
+  list-style-type: none;
+}
+
+.chat-screen-texts > .text {
+  margin: 10px;
+}
+
+.chat-screen-texts > .text > p {
+  display: inline-block;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  height: 50px;
+  line-height: 20px;
+  position: relative;
+}
+
+.my-text {
+  text-align: end;
+}
+/* 
+.chat-screen-texts > .text > p::after {
+  content: "";
+  border-right: 16px solid rgb(255, 255, 255);
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+
+.chat-screen-texts > .my-text > p::after {
+  content: "";
+  border-right: transparent;
+  border-left: 16px solid rgb(255, 255, 255);
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+} */
