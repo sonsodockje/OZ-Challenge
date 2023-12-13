@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "KoddiUDOnGothic-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/KoddiUDOnGothic-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "KoddiUDOnGothic-Regular";
+}
+.flex {
+  display: flex;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: #ffeec7;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 50px;
+  border-radius: 1.2rem;
+  box-shadow: 10px 10px #9fbb73, 20px 20px #f3b664, 30px 30px #ec8f5e;
+}
+h1 {
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: 900;
+}
+input {
+  margin: 5px 0;
+  padding: 12px 10px;
+  font-size: 14px;
+  width: 360px;
+  border-radius: 5px;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-number {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-number input {
+  width: 90px;
+}
+
+.check {
+  margin: 5px 0;
+  margin-left: auto;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+}
+.check button {
+  padding: 12px 10px;
+  margin-left: 5px;
+  font-size: 13px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: #000000;
+}
+select {
+  margin: 5px 0;
+  padding: 12px 10px;
+  font-size: 14px;
+  width: 360px;
+  border-radius: 5px;
+  border: none;
+}
+.sex {
+  margin-right: auto;
+}
+.sex-check {
+  background-color: #ffffff;
+  padding: 12px 10px;
+  margin: 5px 2px;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+[type="radio"] {
+  width: 16px;
+  border: none;
+  box-shadow: none;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+}
+[type="submit"] {
+  margin-top: 20px;
+  box-shadow: none;
+  background-color: #ec8f5e;
+  color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #f3b664;
+  color: white;
+  transition: background-color 0.2s;
+}
+button:hover {
+  cursor: pointer;
+}
