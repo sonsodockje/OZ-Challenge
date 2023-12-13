@@ -4,6 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(
+            217deg,
+            rgba(203, 61, 216, 0.8),
+            rgba(255, 0, 0, 0) 70.7%
+          ),
+          linear-gradient(
+            127deg,
+            rgba(0, 195, 255, 0.8),
+            rgba(0, 255, 0, 0) 70.7%
+          ),
+          linear-gradient(
+            336deg,
+            rgba(255, 157, 0, 0.8),
+            rgba(0, 0, 255, 0) 70.7%
+          ),
+          fixed;
+      }
+
+      button {
+        border: solid 1.5px rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+
+        background: linear-gradient(81deg, #ffec17, #90ff58);
+        background-size: 200% 200%;
+        animation: AnimationName 10s ease infinite;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      button:active {
+        transform: translate(0, 3px);
+      }
+
+      @keyframes AnimationName {
+        0% {
+          background-position: 0% 62%;
+        }
+        50% {
+          background-position: 100% 39%;
+        }
+        100% {
+          background-position: 0% 62%;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="box">
+      <button>Hello, OZ</button>
+    </div>
+  </body>
 </html>
