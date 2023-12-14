@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: black;
+}
+.snowman {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 110px;
+}
+.ball {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 100%;
+  position: relative;
+  z-index: 3;
+}
+.hat {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-right: red 50px solid;
+  border-bottom: red 50px solid;
+  background-color: #fff;
+  transform: rotate(225deg);
+  position: relative;
+  z-index: 1;
+}
+.head {
+  position: relative;
+  top: -70px;
+  width: 260px;
+  height: 260px;
+  background-color: #fff;
+  border-radius: 100%;
+  z-index: 2;
+  box-shadow: 2px 2px 87px rgba(0, 0, 0, 0.077);
+}
+.eyes {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+  top: 80px;
+  gap: 50px;
+  padding-right: 50px;
+}
+.eye {
+  width: 35px;
+  height: 60px;
+  background-color: rgb(19, 0, 0);
+  border-radius: 100%;
+}
+.mouse {
+  width: 40px;
+  height: 8px;
+  position: relative;
+  z-index: 999;
+  margin: auto;
+  top: 110px;
+  right: 25px;
+  border-bottom: solid 4px rgb(139, 2, 2);
+  border-left: solid 4px rgb(139, 2, 2);
+  border-right: solid 4px rgb(139, 2, 2);
+}
+.body {
+  position: relative;
+  top: -120px;
+  width: 460px;
+  height: 460px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 2px 2px 87px rgba(0, 0, 0, 0.316);
+}
+.full-body {
+  display: flex;
+}
+.arm {
+  width: 220px;
+  height: 10px;
+  background-color: rgb(92, 6, 6);
+  margin: 0 -90px;
+  position: relative;
+  top: 30px;
+}
+.arm:nth-child(1) {
+  transform: rotate(25deg);
+  animation-duration: 3s;
+  animation: arm 0.3s 0.3s infinite alternate;
+}
+.arm:nth-child(3) {
+  z-index: -9;
+  transform: rotate(150deg);
+}
+@keyframes arm {
+  from {
+    transform: rotate(25deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+.feets {
+  position: relative;
+  top: -140px;
+  z-index: -1;
+}
+.feet {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 100%;
+  position: relative;
+}
+.feet:nth-child(1) {
+  margin-right: 90px;
+}
