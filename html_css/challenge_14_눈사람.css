@@ -56,7 +56,7 @@ body {
 }
 .eye {
   width: 35px;
-  height: 60px;
+  height: 55px;
   background-color: rgb(19, 0, 0);
   border-radius: 100%;
 }
@@ -95,7 +95,7 @@ body {
 .arm:nth-child(1) {
   transform: rotate(25deg);
   animation-duration: 3s;
-  animation: arm 0.3s 0.3s infinite alternate;
+  animation: arm 0.3s 0.3s infinite alternate-reverse;
 }
 .arm:nth-child(3) {
   z-index: -9;
