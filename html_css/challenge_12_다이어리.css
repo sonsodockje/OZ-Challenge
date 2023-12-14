@@ -16,6 +16,7 @@ body {
   justify-content: center;
 }
 .header {
+  position: static;
   width: 540px;
   padding: 20px;
   margin: 10px;
