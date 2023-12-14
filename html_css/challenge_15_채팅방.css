@@ -5,7 +5,6 @@
   list-style: none;
   text-decoration: none;
 }
-
 html {
   height: 100%;
 }
@@ -17,11 +16,9 @@ body {
   background-color: rgb(166, 99, 166);
   position: relative;
 }
-
 .chat-screen {
   height: calc(100% - 120px);
 }
-
 .chat-screen-bar {
   width: 100%;
   position: fixed;
@@ -41,6 +38,9 @@ body {
   background-color: rgb(166, 99, 166);
   border-radius: 10px;
   margin-right: 15px;
+  background-image: url("https://images.unsplash.com/photo-1570499911518-9b95b0660755?q=80&w=3008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
 }
 .user-name,
 .user-count {
@@ -48,6 +48,7 @@ body {
   top: -7px;
   margin-bottom: 5px;
 }
+
 .user-count {
   font-size: 12px;
   color: rgb(152, 152, 152);
@@ -84,11 +85,9 @@ body {
 .chat-form-bt:active {
   background-color: black;
 }
-
 main {
   overflow: scroll;
 }
-
 .chat-screen-texts {
   margin-top: 90px;
 }
@@ -96,11 +95,9 @@ main {
   padding: 0;
   list-style-type: none;
 }
-
 .chat-screen-texts > .text {
   margin: 10px;
 }
-
 .chat-screen-texts > .text > p {
   display: inline-block;
   background-color: white;
@@ -110,26 +107,26 @@ main {
   line-height: 20px;
   position: relative;
 }
-
-.my-text {
-  text-align: end;
-}
-/* 
 .chat-screen-texts > .text > p::after {
   content: "";
   border-right: 16px solid rgb(255, 255, 255);
   border-bottom: 16px solid transparent;
   position: absolute;
-  top: 10px;
-  left: -10px;
+  top: 15%;
+  left: -15px;
+  margin-left: 10px;
 }
-
+.my-text {
+  text-align: end;
+}
 .chat-screen-texts > .my-text > p::after {
   content: "";
+  position: absolute;
+  top: 15%;
+  left: 100%;
+  margin-left: -11px;
   border-right: transparent;
   border-left: 16px solid rgb(255, 255, 255);
   border-bottom: 16px solid transparent;
-  position: absolute;
-  top: 10px;
-  left: 50px;
-} */
+}
+/* 참고 https://m.blog.naver.com/agensoft/221024439372 말픙선  */
