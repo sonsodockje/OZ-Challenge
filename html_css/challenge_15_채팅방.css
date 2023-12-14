@@ -116,6 +116,15 @@ main {
   left: -15px;
   margin-left: 10px;
 }
+/* 참고 https://m.blog.naver.com/agensoft/221024439372 말픙선  */
+.text p:hover {
+  background-color: rgb(220, 195, 255);
+  transition: all 0.3s;
+}
+.text p:hover::after {
+  border-right: 16px solid rgb(220, 195, 255);
+  transition: all 0.3s;
+}
 .my-text {
   text-align: end;
 }
@@ -129,4 +138,7 @@ main {
   border-left: 16px solid rgb(255, 255, 255);
   border-bottom: 16px solid transparent;
 }
-/* 참고 https://m.blog.naver.com/agensoft/221024439372 말픙선  */
+.my-text p:hover::after {
+  border-left: 16px solid rgb(220, 195, 255);
+  transition: all 0.3s;
+}
