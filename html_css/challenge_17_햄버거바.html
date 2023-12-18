@@ -17,25 +17,25 @@
       color: #fff;
     }
 
-    .notham {
+    .menu1 {
       width: 100%;
       background-color: rgb(7, 21, 34);
       display: flex;
       color: #fff;
     }
 
-    .notham li {
+    .menu1 li {
       padding: 10px;
     }
 
-    .notham .active {
+    .menu1 .active {
       background-color: green;
     }
 
 
     /* --------------------------------------------------------------------------------------------- */
 
-    .ham {
+    .menu2-btn {
       width: 100%;
       background-color: rgb(7, 21, 34);
       color: #fff;
@@ -43,7 +43,7 @@
       display: none;
     }
 
-    .ham p {
+    .menu2-btn p {
       padding: 10px;
       position: relative;
       cursor: pointer;
@@ -51,11 +51,11 @@
       text-align: center;
     }
 
-    .showme {
+    .menu2 {
       display: none;
     }
 
-    .showme ul {
+    .menu2 ul {
       position: absolute;
       top: 40px;
       display: flex;
@@ -63,23 +63,24 @@
       background-color: black;
       width: 100%;
       text-align: center;
+      z-index: 999;
 
     }
 
-    .showme ul li {
+    .menu2 ul li {
       padding: 10px;
     }
 
-    .showme ul .active {
+    .menu2 ul .active {
       background-color: green;
     }
 
     @media screen and (max-width: 550px) {
-      .notham {
+      .menu1 {
         display: none;
       }
 
-      .ham {
+      .menu2-btn {
         display: block;
       }
     }
@@ -87,32 +88,44 @@
     .block {
       display: block;
     }
+
+    main {
+      width: 100%;
+      height: 450px;
+      background-color: aqua;
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
-  <ul class="notham">
-    <li class="active"><a href="#">홈</a></li>
-    <li><a href=#">소개</a></li>
-    <li><a href="#">서비스</a></li>
-    <li><a href="#">문의</a></li>
-  </ul>
-  <div class="ham">
-    <p>=</p>
-  </div>
-  <div class="showme">
-    <ul>
-      <li class=" active"><a href="#">홈</a></li>
+  <header>
+    <ul class="menu1">
+      <li class="active"><a href="#">홈</a></li>
       <li><a href=#">소개</a></li>
       <li><a href="#">서비스</a></li>
       <li><a href="#">문의</a></li>
     </ul>
-  </div>
+    <div class="menu2-btn">
+      <p>=</p>
+    </div>
+    <div class="menu2">
+      <ul>
+        <li class=" active"><a href="#">홈</a></li>
+        <li><a href=#">소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">문의</a></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    z-index 테스트
+  </main>
   <script>
-    let btn = document.querySelector(".ham p")
-    let menu = document.querySelector(".showme")
+    let btn = document.querySelector(".menu2-btn p")
+    let menu = document.querySelector(".menu2")
     btn.addEventListener("click", function () {
-      const list = document.querySelector(".showme").classList
+      const list = document.querySelector(".menu2").classList
       list.toggle("block");
     })
   </script>
