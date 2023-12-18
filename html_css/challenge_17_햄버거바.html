@@ -32,6 +32,9 @@
       background-color: green;
     }
 
+
+    /* --------------------------------------------------------------------------------------------- */
+
     .ham {
       width: 100%;
       background-color: rgb(7, 21, 34);
@@ -43,28 +46,32 @@
     .ham p {
       padding: 10px;
       position: relative;
+      cursor: pointer;
+      height: 20px;
+      text-align: center;
     }
 
-    .ham ul {
+    .showme {
+      display: none;
+    }
+
+    .showme ul {
       position: absolute;
-      top: 0;
+      top: 40px;
       display: flex;
       flex-direction: column;
       background-color: black;
       width: 100%;
+      text-align: center;
+
     }
 
-    .ham ul li {
+    .showme ul li {
       padding: 10px;
     }
 
-    .ham ul .active {
+    .showme ul .active {
       background-color: green;
-    }
-
-    .ham ul:hover {
-      opacity: 1;
-      transition: all 0.2s;
     }
 
     @media screen and (max-width: 550px) {
@@ -75,10 +82,10 @@
       .ham {
         display: block;
       }
+    }
 
-      .ham ul {
-        opacity: 0;
-      }
+    .block {
+      display: block;
     }
   </style>
 </head>
@@ -91,15 +98,24 @@
     <li><a href="#">문의</a></li>
   </ul>
   <div class="ham">
-    <p class="ham-btn">=</p>
+    <p>=</p>
+  </div>
+  <div class="showme">
     <ul>
-      <p>=</p>
-      <li class="active"><a href="#">홈</a></li>
+      <li class=" active"><a href="#">홈</a></li>
       <li><a href=#">소개</a></li>
       <li><a href="#">서비스</a></li>
       <li><a href="#">문의</a></li>
     </ul>
   </div>
+  <script>
+    let btn = document.querySelector(".ham p")
+    let menu = document.querySelector(".showme")
+    btn.addEventListener("click", function () {
+      const list = document.querySelector(".showme").classList
+      list.toggle("block");
+    })
+  </script>
 </body>
 
 </html>
