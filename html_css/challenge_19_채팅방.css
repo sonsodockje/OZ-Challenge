@@ -15,9 +15,12 @@ body {
   height: 100%;
   background-color: rgb(166, 99, 166);
   position: relative;
+  background: url("https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==")
+    fixed center;
+  background-size: cover;
 }
 .chat-screen {
-  height: calc(100% - 120px);
+  height: calc(100% - 60px);
 }
 .chat-screen-bar {
   width: 100%;
@@ -25,7 +28,7 @@ body {
   z-index: 1;
 }
 .user {
-  background-color: white;
+  background-color: rgb(244, 244, 244);
   padding: 15px;
   height: 80px;
 }
@@ -55,7 +58,7 @@ body {
 }
 
 .chat-form {
-  height: 120px;
+  height: 60px;
   background-color: white;
 }
 .chat-form-field {
