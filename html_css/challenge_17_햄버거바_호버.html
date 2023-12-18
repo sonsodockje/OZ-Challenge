@@ -30,14 +30,9 @@
       text-align: center;
     }
 
-    .menu1 li:hover {
-      background-color: #ffffff1e;
-    }
-
     .menu1 .active {
       background-color: green;
     }
-
 
     /* --------------------------------------------------------------------------------------------- */
 
@@ -46,7 +41,8 @@
       background-color: rgb(7, 21, 34);
       color: #fff;
       text-align: center;
-      display: none;
+      visibility: hidden;
+      position: absolute;
     }
 
     .menu2-btn p {
@@ -58,7 +54,16 @@
     }
 
     .menu2 {
-      display: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      visibility: hidden;
+
+    }
+
+    .menu2-btn:hover .menu2 {
+      visibility: visible;
+      transition: all 1s ease-in-out;
     }
 
     .menu2 ul {
@@ -70,19 +75,10 @@
       width: 100%;
       text-align: center;
       z-index: 999;
-
     }
 
     .menu2 ul li {
       padding: 10px;
-    }
-
-    .menu2 ul li:hover {
-      background-color: #ffffff1e;
-    }
-
-    .menu2 ul .active {
-      background-color: green;
     }
 
     @media screen and (max-width: 550px) {
@@ -91,15 +87,8 @@
       }
 
       .menu2-btn {
-        display: block;
+        visibility: visible;
       }
-    }
-
-
-
-
-    .block {
-      display: block;
     }
 
     main {
@@ -121,29 +110,20 @@
     </ul>
     <div class="menu2-btn">
       <p>=</p>
+      <div class="menu2">
+        <ul>
+          <li class=" active"><a href="#">홈</a></li>
+          <li><a href=#">소개</a></li>
+          <li><a href="#">서비스</a></li>
+          <li><a href="#">문의</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="menu2">
-      <ul>
-        <li class=" active"><a href="#">홈</a></li>
-        <li><a href=#">소개</a></li>
-        <li><a href="#">서비스</a></li>
-        <li><a href="#">문의</a></li>
-      </ul>
-    </div>
+
   </header>
   <main>
     z-index 테스트
   </main>
-  <script>
-    let btn = document.querySelector(".menu2-btn p")
-    let menu = document.querySelector(".menu2")
-
-    btn.addEventListener("click", function () {
-      const list = document.querySelector(".menu2").classList
-      list.toggle("block");
-    })
-
-  </script>
 </body>
 
 </html>
