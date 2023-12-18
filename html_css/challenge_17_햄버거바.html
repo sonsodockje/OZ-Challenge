@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄버거 먹고싶다</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .notham {
+      width: 100%;
+      background-color: rgb(7, 21, 34);
+      display: flex;
+      color: #fff;
+    }
+
+    .notham li {
+      padding: 10px;
+    }
+
+    .notham .active {
+      background-color: green;
+    }
+
+    .ham {
+      width: 100%;
+      background-color: rgb(7, 21, 34);
+      color: #fff;
+      text-align: center;
+      display: none;
+    }
+
+    .ham p {
+      padding: 10px;
+      position: relative;
+    }
+
+    .ham ul {
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      width: 100%;
+    }
+
+    .ham ul li {
+      padding: 10px;
+    }
+
+    .ham ul .active {
+      background-color: green;
+    }
+
+    .ham ul:hover {
+      opacity: 1;
+      transition: all 0.2s;
+    }
+
+    @media screen and (max-width: 550px) {
+      .notham {
+        display: none;
+      }
+
+      .ham {
+        display: block;
+      }
+
+      .ham ul {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="notham">
+    <li class="active"><a href="#">홈</a></li>
+    <li><a href=#">소개</a></li>
+    <li><a href="#">서비스</a></li>
+    <li><a href="#">문의</a></li>
+  </ul>
+  <div class="ham">
+    <p class="ham-btn">=</p>
+    <ul>
+      <p>=</p>
+      <li class="active"><a href="#">홈</a></li>
+      <li><a href=#">소개</a></li>
+      <li><a href="#">서비스</a></li>
+      <li><a href="#">문의</a></li>
+    </ul>
+  </div>
+</body>
+
+</html>
