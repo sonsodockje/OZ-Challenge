@@ -1,0 +1,88 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  padding: 10 10px;
+}
+.block {
+  display: block;
+}
+.about {
+  margin: 100px;
+}
+.about h2 {
+  color: rgb(90, 15, 159);
+  font-size: 28px;
+}
+.about h1 {
+  margin: 60px;
+  font-size: 60px;
+}
+.card-wrap {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 10px;
+  justify-content: center;
+  margin-bottom: 100px;
+  gap: 20px;
+}
+.card {
+  width: 300px;
+  padding: 50px 0;
+  background-color: rgb(185, 116, 238);
+  border-radius: 1.5rem;
+  color: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  scale: 1.1;
+  transition: all 0.3s ease;
+}
+.card-wrap:has(.card:hover) .card:not(:hover) {
+  scale: 0.8;
+  opacity: 0.7;
+  filter: blur(4px);
+}
+.card i {
+  font-size: 200px;
+  margin: 15px 0;
+}
+.card h3 {
+  font-size: 20px;
+  margin: 10px;
+}
+.card p {
+  font-size: 12px;
+  font-weight: 300;
+}
+.blue {
+  color: rgb(87, 130, 238);
+}
+.green {
+  color: rgb(69, 194, 144);
+}
+.yellow {
+  color: rgb(229, 215, 62);
+}
+
+@media screen and (max-width: 770px) {
+  .card-wrap {
+    flex-direction: column;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .about h2 {
+    font-size: 28px;
+  }
+  .about h1 {
+    margin: 60px 0;
+    font-size: 60px;
+  }
+}
