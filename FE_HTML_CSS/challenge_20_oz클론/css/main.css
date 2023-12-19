@@ -45,6 +45,7 @@ main {
   transition: all 0.3s ease;
 }
 .card-wrap:has(.card:hover) .card:not(:hover) {
+  /* 호버된 카드를 가지고 있는 랩퍼 중, 호버 상태가 아닌 애 */
   scale: 0.8;
   opacity: 0.7;
   filter: blur(4px);

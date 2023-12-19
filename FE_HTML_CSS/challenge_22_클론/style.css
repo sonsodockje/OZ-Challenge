@@ -1,7 +1,101 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   text-decoration: none;
   list-style: none;
+}
+/* 기본설정 ***************************/
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.none {
+  display: none;
+}
+/* 콘테이너 **************************/
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+}
+
+/* 재생바 ****************************/
+.play {
+  position: fixed;
+  bottom: 0px;
+  height: 80px;
+  background-color: rgb(72, 72, 72);
+  width: 100%;
+}
+/* 왼쪽 네브바 ************************/
+.nav {
+  min-width: 200px;
+  border-right: solid 0.2px rgba(255, 255, 255, 0.18);
+  padding: 25px 30px;
+}
+.logo {
+  margin-bottom: 20px;
+  line-height: -20px;
+}
+.logo span:nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+}
+.logo span:nth-child(2) {
+  font-size: 23px;
+  font-weight: 900;
+}
+.user {
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: solid 0.2px rgba(255, 255, 255, 0.18);
+  border-bottom: solid 0.2px rgba(255, 255, 255, 0.18);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.name {
+  position: relative;
+}
+.name:hover ul {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  display: block;
+  background-color: rgb(49, 49, 49);
+  padding: 5px;
+  width: max-content;
+  border-radius: 10px;
+}
+.name ul li {
+  padding: 5px 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 200;
+}
+.name ul li:not(:last-child) {
+  border-bottom: solid 0.2px rgba(255, 255, 255, 0.18);
+}
+/* 메인 *****************************/
+.main {
+  height: calc(100vh - 120px);
+  width: 100%;
+  padding: 20px 20px;
+  overflow-x: scroll;
+  font-size: 250px;
+  margin: auto;
 }
