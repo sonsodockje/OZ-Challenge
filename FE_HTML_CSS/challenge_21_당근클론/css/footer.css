@@ -11,6 +11,16 @@
   border-bottom: 0.5px solid rgb(195, 195, 195);
   margin-top: 50px;
 }
+.links .left {
+  position: relative;
+}
+.links .left .show {
+  position: absolute;
+  top: -35px;
+  font-weight: 700;
+  display: none;
+}
+
 .links .left ul {
   display: flex;
   flex-direction: column;
@@ -38,6 +48,42 @@
   margin: 50px auto;
   margin-bottom: 200px;
 }
+
+.about-content {
+  font-size: 12px;
+  color: rgb(94, 94, 94);
+}
+
 .about .icon {
   float: right;
+}
+.about .about-content {
+  float: left;
+}
+.about {
+}
+@media screen and (max-width: 840px) {
+  .links .left {
+    margin-left: 10px;
+  }
+
+  .links .left .show {
+    display: block;
+  }
+  .links .right {
+    display: none;
+  }
+  .banner {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .about .icon {
+    float: none;
+  }
 }

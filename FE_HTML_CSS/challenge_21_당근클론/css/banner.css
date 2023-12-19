@@ -1,6 +1,15 @@
 .banner {
   background-color: rgb(162, 204, 218);
   border-radius: 0.5rem;
-  margin: 60px auto;
   height: 150px;
+  max-width: 48rem;
+  width: initial;
+}
+
+@media screen and (max-width: 840px) {
+  .banner {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
