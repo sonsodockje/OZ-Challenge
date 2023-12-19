@@ -1,0 +1,43 @@
+.footer {
+  border-top: 0.5px solid rgb(195, 195, 195);
+}
+.footer-container {
+  width: 48rem;
+  margin: auto;
+}
+.links {
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-bottom: 0.5px solid rgb(195, 195, 195);
+  margin-top: 50px;
+}
+.links .left ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.links .left ul li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(73, 73, 73);
+}
+.links .left {
+  gap: 50px;
+}
+.links .right h2 {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.links .right button {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 0.5rem;
+}
+.about {
+  margin: 50px auto;
+  margin-bottom: 200px;
+}
+.about .icon {
+  float: right;
+}

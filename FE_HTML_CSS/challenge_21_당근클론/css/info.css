@@ -1,19 +1,14 @@
 .info {
-  margin: auto;
   background-color: #ffe2d2;
   height: 320px;
   width: 100%;
   position: relative;
-  top: 4rem;
 }
 .info-content {
-  /* height: 80%; */
   max-width: 48rem;
   margin: auto;
 }
-.info-content-marign {
-  margin: 0 15px;
-}
+
 .info-content h1 {
   padding: 50px 0 20px 0;
   font-size: 28px;
@@ -38,14 +33,18 @@
 .info img {
   position: absolute;
   bottom: 0px;
-  right: 40px;
+  right: 120px;
   width: 580px;
 }
 @media screen and (max-width: 840px) {
   .info img {
     bottom: 0px;
     right: 40px;
-    width: 480px;
+    width: 380px;
+  }
+
+  .info-content {
+    margin: 10px;
   }
   .info-content h1 {
     padding: 20px 0 0 0;
