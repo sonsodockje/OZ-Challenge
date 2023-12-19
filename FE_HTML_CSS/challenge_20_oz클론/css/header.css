@@ -11,7 +11,6 @@ ul li a {
 /* 헤더 **************************************/
 .header {
   position: relative;
-  height: 400px;
 }
 .title {
   width: 100%;
@@ -40,6 +39,7 @@ ul li a {
 
 /* 네브바 **************************************/
 .nav {
+  width: 100%;
   background-color: rgb(0, 0, 0);
   color: #fff;
   height: 50px;
