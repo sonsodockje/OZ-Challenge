@@ -1,11 +1,24 @@
 .banner {
-  background-color: rgb(162, 204, 218);
+  background-color: rgb(241, 179, 126);
   border-radius: 0.5rem;
   height: 150px;
   max-width: 48rem;
   width: initial;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
 }
-
+.blue {
+  background-color: rgb(105, 207, 223);
+}
+.banner button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: orange;
+  color: #fff;
+  border-radius: 0.3rem;
+}
 @media screen and (max-width: 840px) {
   .banner {
     display: block;
