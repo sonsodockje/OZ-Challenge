@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀 ver 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 600px;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .imgs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .imgs>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.5s ease-in;
+        }
+
+        button {
+            border: none;
+            padding: 10px 0;
+            width: 100px;
+            border-radius: .3rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(211, 210, 210);
+        }
+
+        .darkMode {
+            position: absolute;
+            top: 80px;
+            right: 30px;
+        }
+
+        .darkMode>button {
+            background-color: transparent;
+            width: auto;
+            height: auto;
+        }
+
+        .black {
+            background-color: #262626;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>야매로 만든 ,, </h3>
+        <div class="imgs">
+            <img src="https://images.unsplash.com/photo-1598235642710-14b96bbecb2d?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <img src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+
+        </div>
+        <div class="darkMode">
+            <button>🌙</button>
+        </div>
+        <div class="btn-wrap">
+            <button id="img1-btn">이탈리아</button>
+            <button id="img2-btn">일본</button>
+            <button id="img3-btn">뉴욕</button>
+        </div>
+    </div>
+    <script>
+        const img = document.querySelector("img")
+        const darkBtn = document.querySelector(".darkMode>button")
+
+
+        document.querySelector("#img1-btn").addEventListener("click", function () {
+            img.style.marginLeft = "0"
+        })
+        document.querySelector("#img2-btn").addEventListener("click", function () {
+            img.style.marginLeft = "-500px"
+        })
+        document.querySelector("#img3-btn").addEventListener("click", function () {
+            img.style.marginLeft = "-1000px"
+        })
+        darkBtn.addEventListener("click", function () {
+            document.querySelector("body").classList.toggle("black")
+
+        })
+    </script>
+</body>
+
+</html>
