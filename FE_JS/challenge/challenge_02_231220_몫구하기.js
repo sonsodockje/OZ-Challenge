@@ -11,13 +11,9 @@
  */
 
 function question(candies, friends) {
-  // 여기에서 코드 작성해주세요!
-  let result;
-
-  return result;
+  return Math.floor(candies / friends);
 }
 
-// 여기는 결과값 함수이므로 신경쓰지 않으셔도 됩니다!
 Test(
   question,
   [

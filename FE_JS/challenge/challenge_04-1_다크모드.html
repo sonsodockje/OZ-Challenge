@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크모드</title>
+    <style>
+        .darkMode {
+            background-color: #282828;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-color: #f7f7f7;
+            overflow: hidden;
+            border: none;
+        }
+
+        .contain {
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: .5rem;
+            padding: 10px 20px;
+            font-size: 28px;
+            cursor: pointer;
+            background-color: #c1c1c1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <button id="white">🌞</button>
+        <button id="dark">🌙</button>
+    </div>
+    <script>
+        const body = document.querySelector("body")
+        const button = document.querySelectorAll("button")
+
+        const whiteBtn = document.querySelector("#white")
+        const darkBtn = document.querySelector("#dark")
+
+        console.log(body, white, dark)
+
+        whiteBtn.addEventListener("click", function () {
+            body.classList.remove("darkMode")
+        })
+        darkBtn.addEventListener("click", function () {
+            body.classList.add("darkMode")
+        })
+
+    </script>
+</body>
+
+</html>
