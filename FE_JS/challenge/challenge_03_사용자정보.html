@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조사</title>
+    <style>
+        body {
+            margin: auto;
+            text-align: center;
+            margin-top: 300px;
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="name"> </h1>
+    <p id="animal"> </p>
+    <p id="fruit"> </p>
+
+    <script>
+        document.getElementById('name').textContent = `저의 이름은 ${prompt("이름은?")}입니다.`
+        document.getElementById('animal').textContent = `제가 좋아하는 🐿️동물은  ${prompt("동물?")}입니다.`
+        document.getElementById('fruit').textContent = `제가 좋아하는 🍎과일은 ${prompt("과일?")}입니다.`
+    </script>
+
+</body>
+
+</html>
