@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>성적발표</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: rgb(30, 30, 30);
+        }
+
+        #here {
+            color: rgb(192, 0, 0);
+            font-size: 300px;
+            text-align: center;
+            padding-top: 20px;
+
+        }
+    </style>
 </head>
 
 <body>
 
+    <div id="here"></div>
+
+    <script>
+        setTimeout(function () {
+            const here = document.querySelector("#here")
+            const h1 = document.createElement('h1')
+
+            let 성적 = parseInt(prompt("성적을 입력해주세요~") / 10)
+            let 학점
+
+            if (isNaN(성적) || 성적 < 0 || 성적 > 10) {
+                alert("0~100사이의 숫자를 입력해주세요.")
+                location.reload(true)
+            }
+
+            switch (성적) {
+                case 10:
+                case 9: 학점 = 'A'; break;
+                case 8: 학점 = "B"; break;
+                case 7: 학점 = "C"; break;
+                case 6: 학점 = "D"; break;
+                default: 학점 = "F"
+            }
+
+            h1.innerText = 학점
+            here.appendChild(h1)
+        }, 500)
+
+
+    </script>
 </body>
 
 </html>
