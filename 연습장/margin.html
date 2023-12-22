@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: auto;
+            width: 800px;
+            height: 500px;
+            background-color: aqua;
+        }
+
+        div {
+            outline: 1px solid blue;
+        }
+
+        .mom {
+            width: 100%;
+            height: 300px;
+            background-color: beige;
+            text-align: center;
+            padding: 20px;
+            /* 부모의 패딩을 20px로 수정 */
+            margin: 20px auto;
+        }
+
+        .child {
+            width: calc(100% - 40px);
+            /* 부모의 전체 너비에서 패딩의 2배를 뺀 값으로 설정 */
+            background-color: blueviolet;
+            padding: 20px;
+            /* 자식의 패딩을 20px로 수정 */
+            margin: 0;
+            /* 자식의 마진을 0으로 설정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mom">
+        엄마 입니다.
+        <div class="child">자식 입니다. </div>
+    </div>
+</body>
+
+</html>
