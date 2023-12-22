@@ -27,19 +27,23 @@
             position: relative;
         }
 
+        .cover {
+            margin: 20px auto;
+            width: 500px;
+            height: 500px;
+            overflow: none;
+        }
+
         .imgs {
             position: relative;
             display: flex;
-            flex-wrap: wrap;
-            width: 500px;
-            height: 500px;
             overflow: hidden;
             margin: 20px auto;
         }
 
         .imgs>img {
-            width: 100%;
-            height: 100%;
+            width: 500px;
+            height: 500px;
             object-fit: cover;
             object-position: center;
             transition: all 0.5s ease-in;
@@ -78,15 +82,17 @@
 
 <body>
     <div class="container">
-        <h3>야매로 만든 ,, </h3>
-        <div class="imgs">
-            <img src="https://images.unsplash.com/photo-1598235642710-14b96bbecb2d?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="">
-            <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="">
-            <img src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="">
+        <h3>ver 2 !!</h3>
 
+        <div class="cover">
+            <div class="imgs">
+                <img src="https://images.unsplash.com/photo-1598235642710-14b96bbecb2d?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <img src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+            </div>
         </div>
         <div class="darkMode">
             <button>🌙</button>
