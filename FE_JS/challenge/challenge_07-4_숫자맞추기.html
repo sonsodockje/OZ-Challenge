@@ -1,14 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>랜덤 숫자 맞추기</title>
+    <style>
+        body {
+            margin: auto;
+            width: 90%;
+            height: 100dvh;
+            background-color: rgb(35, 35, 35);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        input {
+            border: none;
+        }
+
+        button {
+            border: none;
+        }
+
+        .content {
+            margin-top: -200px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="content">
+        <h1>숫자 맞추기</h1>
+        <h3>1부터 100사이의 숫자를 입력하세요!</h3>
 
+        <input id="value" type="number">
+        <button id="send">확인</button>
+
+        <p id="hint"></p>
+    </div>
+    <script>
+        const hint = document.querySelector("#hint")
+        const btn = document.querySelector("#send")
+        const inputValue = document.querySelector("#value")
+        let random = Math.floor(Math.random() * 101);
+        console.log("랜덤 숫자" + random);
+
+
+        btn.addEventListener("click", function () {
+            hint.innerHTML = " "
+            console.log("사용자숫자" + inputValue.value);
+            if (Number(inputValue.value) === random) {
+                hint.innerHTML = "정답입니다!! "
+            } else if (inputValue.value > random) {
+                hint.innerHTML = "숫자를 내려주세요"
+            } else {
+                hint.innerHTML = "숫자를 올려주세요"
+            }
+        })
+    </script>
 </body>
 
 </html>
