@@ -45,7 +45,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-FE_실습/
+연습장/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
