@@ -30,13 +30,14 @@
   position: fixed;
   bottom: 0px;
   height: 80px;
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(22, 22, 22);
   width: 100%;
 }
 
 /* 2.사이드바 */
 .nav {
-  min-width: 200px;
+  width: 150px;
+  min-width: 180px;
   border-right: solid 0.2px rgba(255, 255, 255, 0.18);
   padding: 25px 30px;
 }
@@ -92,6 +93,12 @@
   border-bottom: solid 0.2px rgba(255, 255, 255, 0.18);
 }
 
+.membership-btn {
+  border: none;
+  background: linear-gradient(104deg, #ff0c28 9%, #d901df 51%, #7200ff 98%);
+  width: 180px;
+}
+
 /* 3.메인 */
 .main {
   height: 100dvh;
@@ -101,10 +108,11 @@
 }
 /* 3-1.프로모션 */
 .promotion {
-  height: 250px;
+  height: 300px;
 
-  margin: 0 43px;
+  margin: 0 70px;
   margin-top: 50px;
+  margin-bottom: 50px;
 
   justify-content: center;
   align-items: center;
@@ -126,23 +134,56 @@
 }
 .headline {
   flex: 3;
-  padding: 25px;
+  padding: 30px;
   flex-direction: column;
 
   background: linear-gradient(to top left, rgb(33, 33, 33), rgb(80, 80, 80));
   height: 100%;
   justify-content: center;
 }
+
+.headline-text {
+  font-size: 15px;
+  color: rgb(190, 190, 190);
+  margin: 10px 0;
+  white-space: no-wrap;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
 /* 3-2.매거진 */
 .magazine {
-  margin: 0 43px;
-  margin-top: 25px;
+  margin: 0 70px;
+  margin-bottom: 50px;
 }
 .head {
   justify-content: space-between;
   font-size: 12px;
   align-items: end;
+  margin-bottom: 10px;
 }
+.magazine-content {
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.magazine-content::-webkit-scrollbar {
+  display: none;
+}
+.magazine-content ul {
+  gap: 15px;
+}
+.magazine-content ul li {
+  width: 300px;
+  min-width: 300px;
+}
+
+.magazine-content ul li img {
+  width: 100%;
+}
+.magazine-content ul div p {
+  font-size: 15px;
+}
+
 /* 4.푸터 */
 footer {
   margin: 0 43px;
