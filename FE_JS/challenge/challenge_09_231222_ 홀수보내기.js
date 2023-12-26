@@ -21,6 +21,12 @@ function question(n) {
   return result;
 }
 
+function getEvenNumbers(n) {
+  return Array.from({ length: n + 1 }, (_, i) => i).filter(
+    (num) => num % 2 === 0
+  );
+}
+
 // 여기는 결과값 함수이므로 신경쓰지 않으셔도 됩니다!
 Test(
   question,
