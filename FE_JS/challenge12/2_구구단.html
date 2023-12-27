@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            margin: 60px auto 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <tr id="level">
+        </tr>
+    </table>
+
+</body>
+<script>
+
+    const NUMBER = 9
+
+    let table = document.getElementById('table')
+    let level = document.getElementById('level')
+
+
+
+
+    for (let i = 1; i <= NUMBER; i++) {
+        let levelText = `
+                            <th>
+                                ${i}단
+                            </th>
+                        `
+        level.innerHTML += levelText;
+
+        let row = document.createElement('tr')
+        row.id = `l${i}`
+        table.appendChild(row)
+
+        for (let j = 1; j <= NUMBER; j++) {
+            let levelId = document.getElementById(`l${i}`)
+            let td = document.createElement('td')
+            td.innerHTML = `
+                            <td>${j} X ${i} = ${i * j}</td>
+                            `
+            levelId.appendChild(td)
+        }
+    }
+</script>
+
+</html>
