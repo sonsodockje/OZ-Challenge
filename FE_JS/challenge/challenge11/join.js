@@ -1,7 +1,4 @@
-// 값 출력
-// 아이디 체크
-// 비번체크
-// 바디 초기화 후 텍스트 추가.
+var body = document.body;
 var form = document.forms["form"];
 
 form.addEventListener("submit", function (e) {
@@ -19,13 +16,10 @@ form.addEventListener("submit", function (e) {
     alert("비밀번호가 일치하지 않습니다.");
     return;
   }
-
+  body.innerHTML = "";
   for (var i = 0; i < form.elements.length - 2; i++) {
     var element = form.elements[i];
-    console.log(element.name + ": " + element.value);
-    console.log("--------------------------------");
+    var content = `${element.name}: ${element.value}<br>`;
+    body.innerHTML += content;
   }
-
-  document.body.innerHTML = "";
-  document.write(`<p>${element.userName}님 환영합니다</p>`);
 });
