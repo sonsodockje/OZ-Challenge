@@ -11,6 +11,7 @@
         th,
         td {
             border: 1px solid black;
+
         }
 
         table {
@@ -20,6 +21,7 @@
 </head>
 
 <body>
+
     <table id="table">
         <tr id="level">
         </tr>
@@ -28,12 +30,10 @@
 </body>
 <script>
 
-    const NUMBER = 9
+    const NUMBER = parseInt(prompt("몇단까지 보고싶?"))
 
     let table = document.getElementById('table')
     let level = document.getElementById('level')
-
-
 
 
     for (let i = 1; i <= NUMBER; i++) {
@@ -44,9 +44,14 @@
                         `
         level.innerHTML += levelText;
 
-        let row = document.createElement('tr')
-        row.id = `l${i}`
-        table.appendChild(row)
+        // tr(행)은 9번만 만들어지게
+        if (!document.getElementById('l9')) {
+            let row = document.createElement('tr')
+            row.id = `l${i}`
+            table.appendChild(row)
+        } else {
+            continue
+        }
 
         for (let j = 1; j <= NUMBER; j++) {
             let levelId = document.getElementById(`l${i}`)
@@ -56,6 +61,7 @@
                             `
             levelId.appendChild(td)
         }
+
     }
 </script>
 
