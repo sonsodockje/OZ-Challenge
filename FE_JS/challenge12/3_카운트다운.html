@@ -1,13 +1,62 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>현재 시각과 올해 남은 시간</title>
+    <style>
+        body {
+            padding: 15rem;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
+    <p id="current-time"></p>
+    <p id="remaining-time"></p>
+
+    <script>
+        function pad(number) {
+            return (number < 10 ? '0' : '') + number;
+        }
+
+        function displayCurrentTime() {
+            let currentTimeElement = document.getElementById('current-time');
+            let now = new Date();
+            let hours = pad(now.getHours());
+            let minutes = pad(now.getMinutes());
+            let seconds = pad(now.getSeconds());
+            let currentTimeString = hours + ":" + minutes + ":" + seconds;
+            currentTimeElement.textContent = currentTimeString;
+        }
+
+        function displayRemainingTime() {
+            let remainingTimeElement = document.getElementById('remaining-time');
+            let now = new Date();
+            let endOfYear = new Date(now.getFullYear(), 11, 31, 23, 59, 59, 999);
+
+
+            let timeDiff = endOfYear - now;
+            let days = Math.floor(timeDiff / (24 * 60 * 60 * 1000));
+            let hours = pad(Math.floor((timeDiff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)));
+            let minutes = pad(Math.floor((timeDiff % (60 * 60 * 1000)) / (60 * 1000)));
+            let seconds = pad(Math.floor((timeDiff % (60 * 1000)) / 1000));
+
+            let remainingTimeString = days + "일 " + hours + "시간 " + minutes + "분 " + seconds + "초 남았습니다.";
+            remainingTimeElement.textContent = remainingTimeString;
+        }
+
+
+        displayCurrentTime();
+        displayRemainingTime();
+
+
+        setInterval(displayCurrentTime, 1000);
+        setInterval(displayRemainingTime, 1000);
+    </script>
 
 </body>
 
