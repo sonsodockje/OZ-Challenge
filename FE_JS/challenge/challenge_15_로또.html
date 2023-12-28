@@ -12,7 +12,7 @@
 
         .container {
             text-align: center;
-            padding: 15rem;
+            padding: 13rem;
 
         }
 
@@ -24,7 +24,7 @@
 
         .ball {
             background-color: rgb(33, 204, 147);
-            width: 100px;
+            min-width: 100px;
             height: 100px;
             border-radius: 100%;
             font-size: 24px;
@@ -35,10 +35,6 @@
 
         }
 
-        .ball:nth-child(2n) {
-            background-color: black;
-        }
-
         button {
             border: none;
             padding: 20px 50px;
@@ -46,6 +42,26 @@
             background-color: black;
             color: #fff;
             cursor: pointer;
+        }
+
+        .ball1 {
+            background-color: rgb(33, 204, 147);
+        }
+
+        .ball10 {
+            background-color: rgb(33, 176, 204);
+        }
+
+        .ball20 {
+            background-color: rgb(184, 33, 204);
+        }
+
+        .ball30 {
+            background-color: rgb(204, 176, 33);
+        }
+
+        .ball40 {
+            background-color: rgb(204, 33, 33);
         }
     </style>
 </head>
@@ -66,20 +82,37 @@
 </body>
 <script>
 
-    // 중복 이슈 발생 !!! 
+
     // 수 별로 색상 변경
 
     let generateBtn = document.getElementById('generate')
     let numbers = document.getElementById('numbers')
 
+    function color(number) {
+        let a = Math.floor(number / 10)
+        switch (a) {
+            case 0: return "ball1"
+            case 1: return "ball10"
+            case 2: return "ball20"
+            case 3: return "ball30"
+            case 4: return "ball40"
+        }
+    }
+
     generateBtn.addEventListener("click", function () {
         numbers.innerHTML = ""
         let randomNumbers = [];
-        for (let i = 0; i < 5; i++) randomNumbers.push(Math.floor(Math.random() * 99) + 1)
-
+        // for (let i = 0; i < 5; i++) randomNumbers.push(Math.floor(Math.random() * 99) + 1)
+        while (randomNumbers.length < 5) {
+            let randomNumber = Math.floor(Math.random() * 45) + 1;
+            if (!randomNumbers.includes(randomNumber)) {
+                randomNumbers.push(randomNumber);
+            }
+        }
         randomNumbers.forEach(function (item) {
+            let backgroundColor = color(item);
             numbers.innerHTML +=
-                `<p class="ball">${item}</p>`
+                `<p class="ball ${backgroundColor}">${item}</p>`
         })
     })
 
