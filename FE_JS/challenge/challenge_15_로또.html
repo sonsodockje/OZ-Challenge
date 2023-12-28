@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또는 로또다</title>
+    <style>
+        body {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .container {
+            text-align: center;
+            padding: 15rem;
+
+        }
+
+        #numbers {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .ball {
+            background-color: rgb(33, 204, 147);
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+
+        }
+
+        .ball:nth-child(2n) {
+            background-color: black;
+        }
+
+        button {
+            border: none;
+            padding: 20px 50px;
+            border-radius: 0.5rem;
+            background-color: black;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="generate">뉴!!!</button>
+        <div id="numbers">
+            <p class="ball"></p>
+            <p class="ball"></p>
+            <p class="ball"></p>
+            <p class="ball"></p>
+            <p class="ball"></p>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+    // 중복 이슈 발생 !!! 
+    // 수 별로 색상 변경
+
+    let generateBtn = document.getElementById('generate')
+    let numbers = document.getElementById('numbers')
+
+    generateBtn.addEventListener("click", function () {
+        numbers.innerHTML = ""
+        let randomNumbers = [];
+        for (let i = 0; i < 5; i++) randomNumbers.push(Math.floor(Math.random() * 99) + 1)
+
+        randomNumbers.forEach(function (item) {
+            numbers.innerHTML +=
+                `<p class="ball">${item}</p>`
+        })
+    })
+
+
+
+
+</script>
+
+</html>
