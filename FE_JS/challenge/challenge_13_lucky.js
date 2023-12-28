@@ -27,12 +27,24 @@ function question(n, m) {
 
     if (rn === n) {
       result++;
-      console.log(`${round}회차 행운의 숫자 : ${rn} ---> 당첨!!`);
+      console.log(`${round + 1}회차 행운의 숫자 : ${rn} ---> 당첨!!`);
     } else {
-      console.log(`${round}회차 행운의 숫자 : ${rn}`);
+      console.log(`${round + 1}회차 행운의 숫자 : ${rn}`);
     }
   }
   return console.log(`당첨금은 ${result * m}원 입니다.`);
 }
 
-question(4, 10000);
+function question2(n, m) {
+  let result = 0;
+  for (let round = 0; round < 9; round++) {
+    let rn = Math.floor(Math.random() * 9) + 1;
+    console.log(
+      `${round + 1}회차 행운의 숫자 : ${rn} ${rn === n ? "---> 당첨!!" : ""}`
+    );
+    result += rn === n ? 1 : 0;
+  }
+  console.log(`당첨금은 ${result * m}원 입니다.`);
+}
+
+question2(4, 10000);
