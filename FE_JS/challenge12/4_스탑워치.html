@@ -11,45 +11,30 @@
     <button id="startBtn">시작</button>
     <button id="stopBtn">중지</button>
     <p id="display">00:00:00</p>
+    <div id="test"></div>
 
     <script>
+        let test = document.getElementById('test')
+        console.log(document.getElementById('display'));
+
         const stopwatch = {
-            startTime: null,
+            startId: null,
             isRunning: false,
             timer: null,
 
             start() {
-                if (!this.isRunning) {
-                    // 시작 시간이 설정되어 있지 않으면 현재 시간을 시작 시간으로 설정
-                    if (!this.startTime) {
-                        this.startTime = new Date().getTime();
-                    }
 
-                    this.isRunning = true;
-                    this.updateDisplay();
-                    this.timer = setInterval(() => this.updateDisplay(), 1000);
-                }
             },
 
             stop() {
-                if (this.isRunning) {
-                    clearInterval(this.timer);
-                    this.isRunning = false;
-                }
+
             },
 
-            updateDisplay() {
-                if (this.startTime) {
-                    const currentTime = new Date().getTime();
-                    const elapsedTime = new Date(currentTime - this.startTime);
-                    const hours = elapsedTime.getUTCHours().toString().padStart(2, '0');
-                    const minutes = elapsedTime.getUTCMinutes().toString().padStart(2, '0');
-                    const seconds = elapsedTime.getUTCSeconds().toString().padStart(2, '0');
-                    document.getElementById('display').innerText = `${hours}:${minutes}:${seconds}`;
-                } else {
-                    document.getElementById('display').innerText = '00:00:00';
-                }
+            reset() {
+
             }
+
+
         };
 
         document.getElementById('startBtn').addEventListener('click', function () {
@@ -64,3 +49,5 @@
 </body>
 
 </html>
+
+<!-- 다시 해. https://www.youtube.com/watch?v=L4hsB1Gv5BQ&ab_channel=MrCoder -->
