@@ -64,24 +64,33 @@
 
     // }
 
-    const NUMBER = parseInt(prompt("몇 단까지 보고 싶어?"));
+    // 다시 해야겟늠.. 
+    let NUMBER = parseInt(prompt("몇 단까지 보고 싶어? (9이상.. 제발..)"));
+    while (NUMBER < 9) {
+        NUMBER = parseInt(prompt("제발 9이상...."));
+    }
     const table = document.getElementById('table');
     const level = document.getElementById('level');
 
+
     for (let i = 1; i <= NUMBER; i++) {
+        //컬럼(단)
         level.innerHTML += `<th>${i}단</th>`;
 
+        //행(레벨)
         if (!document.getElementById(`l9`)) {
             table.appendChild(document.createElement('tr')).id = `l${i}`;
         } else {
             continue;
         }
 
+        // 셀은 가로로 배치된다
         const levelId = document.getElementById(`l${i}`);
         for (let j = 1; j <= NUMBER; j++) {
             levelId.appendChild(document.createElement('td')).innerHTML = `<td>${j} X ${i} = ${i * j}</td>`;
         }
     }
+
 
 
 
