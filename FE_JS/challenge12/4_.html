@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <button id="startBtn">시작</button>
+    <button id="stopBtn">중지</button>
+    <p id="display">00:00:00</p>
+
+    <script>
+        const stopwatch = {
+            startTime: null,
+            isRunning: false,
+            timer: null,
+
+            start() {
+                if (!this.isRunning) {
+                    this.startTime = new Date().getTime();
+                    this.isRunning = true;
+                    this.updateDisplay();
+                    this.timer = setInterval(() => this.updateDisplay(), 1000);
+                }
+            },
+
+            stop() {
+                if (this.isRunning) {
+                    clearInterval(this.timer);
+                    this.isRunning = false;
+                }
+            },
+
+
+            updateDisplay() {
+                if (this.startTime) {
+                    const currentTime = new Date().getTime();
+                    const elapsedTime = new Date(currentTime - this.startTime);
+                    const hours = elapsedTime.getUTCHours().toString().padStart(2, '0');
+                    const minutes = elapsedTime.getUTCMinutes().toString().padStart(2, '0');
+                    const seconds = elapsedTime.getUTCSeconds().toString().padStart(2, '0');
+                    document.getElementById('display').innerText = `${hours}:${minutes}:${seconds}`;
+                } else {
+                    document.getElementById('display').innerText = '00:00:00';
+                }
+            }
+        };
+
+        document.getElementById('startBtn').addEventListener('click', function () {
+            stopwatch.start();
+        });
+
+        document.getElementById('stopBtn').addEventListener('click', function () {
+            stopwatch.stop();
+        });
+    </script>
+</body>
+
+</html>

@@ -30,39 +30,62 @@
 </body>
 <script>
 
-    const NUMBER = parseInt(prompt("몇단까지 보고싶?"))
+    // const NUMBER = parseInt(prompt("몇단까지 보고싶?"))
 
-    let table = document.getElementById('table')
-    let level = document.getElementById('level')
+    // let table = document.getElementById('table')
+    // let level = document.getElementById('level')
 
+
+    // for (let i = 1; i <= NUMBER; i++) {
+    //     let levelText = `
+    //                         <th>
+    //                             ${i}단
+    //                         </th>
+    //                     `
+    //     level.innerHTML += levelText;
+
+    //     // tr(행)은 9번만 만들어지게
+    //     if (!document.getElementById('l9')) {
+    //         let row = document.createElement('tr')
+    //         row.id = `l${i}`
+    //         table.appendChild(row)
+    //     } else {
+    //         continue
+    //     }
+
+    //     for (let j = 1; j <= NUMBER; j++) {
+    //         let levelId = document.getElementById(`l${i}`)
+    //         let td = document.createElement('td')
+    //         td.innerHTML = `
+    //                         <td>${j} X ${i} = ${i * j}</td>
+    //                         `
+    //         levelId.appendChild(td)
+    //     }
+
+    // }
+
+    const NUMBER = parseInt(prompt("몇 단까지 보고 싶어?"));
+    const table = document.getElementById('table');
+    const level = document.getElementById('level');
 
     for (let i = 1; i <= NUMBER; i++) {
-        let levelText = `
-                            <th>
-                                ${i}단
-                            </th>
-                        `
-        level.innerHTML += levelText;
+        level.innerHTML += `<th>${i}단</th>`;
 
-        // tr(행)은 9번만 만들어지게
-        if (!document.getElementById('l9')) {
-            let row = document.createElement('tr')
-            row.id = `l${i}`
-            table.appendChild(row)
+        if (!document.getElementById(`l9`)) {
+            table.appendChild(document.createElement('tr')).id = `l${i}`;
         } else {
-            continue
+            continue;
         }
 
+        const levelId = document.getElementById(`l${i}`);
         for (let j = 1; j <= NUMBER; j++) {
-            let levelId = document.getElementById(`l${i}`)
-            let td = document.createElement('td')
-            td.innerHTML = `
-                            <td>${j} X ${i} = ${i * j}</td>
-                            `
-            levelId.appendChild(td)
+            levelId.appendChild(document.createElement('td')).innerHTML = `<td>${j} X ${i} = ${i * j}</td>`;
         }
-
     }
+
+
+
+
 </script>
 
 </html>
