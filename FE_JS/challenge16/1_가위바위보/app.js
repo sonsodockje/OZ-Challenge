@@ -9,18 +9,6 @@ let userChoice = "";
 let gameResultText = document.getElementById("gameResultText");
 let userBtnChoice = document.querySelectorAll(".userChoice");
 
-// let 가위이미지 = url("");
-// 기존코드 ------------------------------------------------------------
-// userBtnChoice[0].addEventListener("click", function (e) {
-//   choice(e.target.value);
-// });
-// userBtnChoice[1].addEventListener("click", function (e) {
-//   choice(e.target.value);
-// });
-// userBtnChoice[2].addEventListener("click", function (e) {
-//   choice(e.target.value);
-// });
-
 // 중복 줄이기 ----------------------------------------------------------
 // for (let i = 0; i < userBtnChoice.length; i++) {
 //   userBtnChoice[i].addEventListener("click", function (e) {

@@ -20,7 +20,11 @@
 
             start() {
                 if (!this.isRunning) {
-                    this.startTime = new Date().getTime();
+                    // 시작 시간이 설정되어 있지 않으면 현재 시간을 시작 시간으로 설정
+                    if (!this.startTime) {
+                        this.startTime = new Date().getTime();
+                    }
+
                     this.isRunning = true;
                     this.updateDisplay();
                     this.timer = setInterval(() => this.updateDisplay(), 1000);
@@ -33,7 +37,6 @@
                     this.isRunning = false;
                 }
             },
-
 
             updateDisplay() {
                 if (this.startTime) {
@@ -56,6 +59,7 @@
         document.getElementById('stopBtn').addEventListener('click', function () {
             stopwatch.stop();
         });
+
     </script>
 </body>
 
