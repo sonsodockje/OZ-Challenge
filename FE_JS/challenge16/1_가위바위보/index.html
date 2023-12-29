@@ -26,6 +26,11 @@
             gap: 15px;
         }
 
+        .wrap {
+            display: flex;
+            gap: 20px;
+        }
+
         button {
             border: none;
             width: 200px;
@@ -34,15 +39,21 @@
             font-size: 25px;
             padding: 25px;
         }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="btns">
-            <button class="userChoice" value="가위">가위</button>
-            <button class="userChoice" value="바위">바위</button>
-            <button class="userChoice" value="보">보</button>
+            <button class="userChoice" value="가위" number="0">가위</button>
+            <button class="userChoice" value="바위" number="1">바위</button>
+            <button class="userChoice" value="보" number="2">보</button>
         </div>
         <div id="gameResultText"></div>
     </div>
