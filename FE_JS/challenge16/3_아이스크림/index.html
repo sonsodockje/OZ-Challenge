@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>아이스크림</title>
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            gap: 50px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="wrap">
+        <div>
+            <input type="text" id="userInput" placeholder="우헤헼!!">
+            <button id="addBtn">추가!!!</button>
+            <button id="viewBtn">볼래!!!</button>
+            <button id="removeBtn">다지워!!!</button>
+        </div>
+        <div id="view"></div>
+    </div>
     <script src="app.js"></script>
 </body>
 
