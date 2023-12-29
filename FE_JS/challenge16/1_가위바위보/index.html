@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>심심하니..</title>
+    <style>
+        body {
+            background-color: rgb(244, 243, 242);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15rem;
+            padding-top: 10rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            width: 200px;
+            border-radius: .2rem;
+            cursor: pointer;
+            font-size: 25px;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btns">
+            <button class="userChoice" value="가위">가위</button>
+            <button class="userChoice" value="바위">바위</button>
+            <button class="userChoice" value="보">보</button>
+        </div>
+        <div id="gameResultText"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
