@@ -4,11 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>키키킼키</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+
+        * {
+            font-family: 'Single Day', cursive;
+        }
+
+        body {
+            background-color: rgb(235, 249, 255);
+        }
+
+        .wrap {
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+            width: 500px;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            width: 240px;
+            padding: 10px;
+            border-radius: .2rem;
+        }
+
+        p {
+            margin-top: -20px;
+        }
+    </style>
 </head>
 
+
 <body>
-    <script src="app.js"></script>
+    <div class="wrap">
+        <h1>다람쥐 속 🦦디노🦦 찾기</h1>
+        <p>Esc, Enter 가능</p>
+        <img id="img" src="test" alt="">
+        <div class="btns">
+            <button id="start">계속</button>
+            <button id="stop">정지</button>
+        </div>
+        <script src="app.js"></script>
+    </div>
 </body>
 
 </html>
