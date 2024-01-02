@@ -18,7 +18,6 @@
 function question(str) {
   const refinedStr = str.replace(/[^a-zA-Z]/g, "").toLowerCase();
   const reversedStr = refinedStr.split("").reverse().join("");
-
   return refinedStr === reversedStr;
 }
 // 여기는 결과값 함수이므로 신경쓰지 않으셔도 됩니다!
