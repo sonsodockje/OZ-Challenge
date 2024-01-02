@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody">
+    </tbody>
+  </table>
+  <button onclick="over75()">75 이상 추출</button>
+  <button onclick="listup()">정렬</button>
+  <button onclick="makeTable(studentScores)">원본</button>
+  <h2 id="studentList"></h2>
+</body>
+<script>
+  let studentScores = [
+    ["승철", 100],
+    ["정한", 85],
+    ["지수", 58],
+    ["준휘", 98],
+    ["순영", 48],
+    ["원우", 58],
+    ["지훈", 68],
+  ];
+
+  const studentList = document.getElementById("studentList");
+  const tbody = document.getElementById("studentTableBody");
+
+  function makeTable(arr) {
+    tbody.innerHTML = ""
+    // [0]
+    arr.forEach(student => {
+      const row = document.createElement("tr");
+      // [0][0]
+      student.forEach(data => {
+        const cell = document.createElement("td");
+        cell.textContent = data;
+        row.appendChild(cell);
+      });
+      tbody.appendChild(row);
+    });
+  }
+
+  function over75() {
+    tbody.innerHTML = ""
+    let buf = studentScores.filter(student => student[1] >= 75);
+    makeTable(buf)
+  }
+
+  function listup() {
+
+    let buf = studentScores.slice().sort(function (a, b) {
+      return b[1] - a[1];
+    });
+
+
+    tbody.innerHTML = "";
+    makeTable(buf);
+  }
+  makeTable(studentScores)
+</script>
+
+</html>
