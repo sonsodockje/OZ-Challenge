@@ -44,7 +44,7 @@ function choice(userChoice, userImgNumber) {
                                   </div>
                                 </div>                         
                                 <h1>${result}</h1>
-                                <h1>${count} 번 경기중 ${winCount} 번 이김.</h1>
+                                <h1>${count}번 경기중 ${winCount}번 이김.</h1>
                             `;
 }
 
