@@ -37,7 +37,7 @@
     </tbody>
   </table>
   <button onclick="over75()">75 이상 추출</button>
-  <button onclick="listup()">정렬</button>
+  <button onclick="sorted()">정렬</button>
   <button onclick="makeTable(studentScores)">원본</button>
   <h2 id="studentList"></h2>
 </body>
@@ -76,13 +76,10 @@
     makeTable(buf)
   }
 
-  function listup() {
-
+  function sorted() {
     let buf = studentScores.slice().sort(function (a, b) {
       return b[1] - a[1];
     });
-
-
     tbody.innerHTML = "";
     makeTable(buf);
   }
