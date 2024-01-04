@@ -10,7 +10,9 @@ const input = document.getElementById("filter-text");
 const button = document.getElementById("filter-button");
 const select = document.getElementById("filter-select");
 
-const currentDogs = [];
+//////// api 연속으로 호출할때마다 사진이 배로 불러와지는데 무슨일이지?
+
+let currentDogs = [];
 
 // 페이지 오픈시 강아지 사진 불러와서
 // div를 만들고 div내 템플릿 넣고 div append 해줌.
@@ -46,7 +48,6 @@ button.addEventListener("click", () => {
     Display(item);
   });
 });
-
 // 칠때 실시간으로
 input.addEventListener("keydown", (e) => {
   // 배열에서 남기고픈 것만 true인 것만 반환? => filter
@@ -67,15 +68,25 @@ select.addEventListener("change", (e) => {
     Display(item);
   });
 });
-
 function Display(item) {
   const dogImgDiv = document.createElement("div");
   dogImgDiv.classList.add("flex-item");
   dogImgDiv.innerHTML = `<img src=${item}>`;
   main.appendChild(dogImgDiv);
 }
-
-function more() {
+document.getElementById("up").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+document.getElementById("down").addEventListener("click", () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
+});
+document.getElementById("more").addEventListener("click", () => {
   rsq1.open("get", apiRandomDogs);
   rsq1.addEventListener("load", () => {
     const response = JSON.parse(rsq1.response);
@@ -87,17 +98,23 @@ function more() {
     });
   });
   rsq1.send();
-}
-
-function up() {
+});
+document.getElementById("reset").addEventListener("click", () => {
+  currentDogs = [];
+  main.innerHTML = "";
+  setTimeout(() => {
+    rsq1.open("get", apiRandomDogs);
+    rsq1.addEventListener("load", () => {
+      const response = JSON.parse(rsq1.response);
+      response.message.forEach((item) => {
+        currentDogs.push(item);
+        Display(item);
+      });
+    });
+    rsq1.send();
+  }, 100);
   window.scrollTo({
     top: 0,
-    behavior: "smooth", // 부드러운 스크롤 효과를 위해 "smooth" 사용
+    behavior: "smooth",
   });
-}
-function down() {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth", // 부드러운 스크롤 효과를 위해 "smooth" 사용
-  });
-}
+});
