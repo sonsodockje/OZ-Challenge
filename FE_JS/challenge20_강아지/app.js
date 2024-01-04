@@ -46,7 +46,6 @@ button.addEventListener("click", () => {
     Display(item);
   });
 });
-
 // 칠때 실시간으로
 input.addEventListener("keydown", (e) => {
   // 배열에서 남기고픈 것만 true인 것만 반환? => filter
@@ -67,15 +66,25 @@ select.addEventListener("change", (e) => {
     Display(item);
   });
 });
-
 function Display(item) {
   const dogImgDiv = document.createElement("div");
   dogImgDiv.classList.add("flex-item");
   dogImgDiv.innerHTML = `<img src=${item}>`;
   main.appendChild(dogImgDiv);
 }
-
-function more() {
+document.getElementById("up").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+document.getElementById("down").addEventListener("click", () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
+});
+document.getElementById("more").addEventListener("click", () => {
   rsq1.open("get", apiRandomDogs);
   rsq1.addEventListener("load", () => {
     const response = JSON.parse(rsq1.response);
@@ -87,17 +96,4 @@ function more() {
     });
   });
   rsq1.send();
-}
-
-function up() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // 부드러운 스크롤 효과를 위해 "smooth" 사용
-  });
-}
-function down() {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth", // 부드러운 스크롤 효과를 위해 "smooth" 사용
-  });
-}
+});
