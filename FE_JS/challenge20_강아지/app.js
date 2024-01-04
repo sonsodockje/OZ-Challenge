@@ -10,7 +10,11 @@ const input = document.getElementById("filter-text");
 const button = document.getElementById("filter-button");
 const select = document.getElementById("filter-select");
 
-const currentDogs = [];
+
+//////// api 연속으로 호출할때마다 사진이 배로 불러와지는데 무슨일이지?
+
+let currentDogs = [];
+
 
 // 페이지 오픈시 강아지 사진 불러와서
 // div를 만들고 div내 템플릿 넣고 div append 해줌.
@@ -97,3 +101,24 @@ document.getElementById("more").addEventListener("click", () => {
   });
   rsq1.send();
 });
+
+document.getElementById("reset").addEventListener("click", () => {
+  currentDogs = [];
+  main.innerHTML = "";
+  setTimeout(() => {
+    rsq1.open("get", apiRandomDogs);
+    rsq1.addEventListener("load", () => {
+      const response = JSON.parse(rsq1.response);
+      response.message.forEach((item) => {
+        currentDogs.push(item);
+        Display(item);
+      });
+    });
+    rsq1.send();
+  }, 100);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
