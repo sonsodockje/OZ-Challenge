@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/oz_icon.png" />
+    <title>부캠 종료 카운트다운</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100dvh;
+            margin-top: -100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            margin: 0 auto;
+            gap: 20px;
+            justify-content: space-between;
+            width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px black solid;
+            width: 100%;
+            height: 200px;
+            transition: all .3s;
+            gap: 5px;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            margin: 0 auto;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <div class="header" id="header">
+            <p id="goleDate"></p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div id="day">00</div>
+                <p>일</p>
+            </div>
+            <div class="card">
+                <div id="hour">00</div>
+                <p>시간</p>
+            </div>
+            <div class="card">
+                <div id="min">00</div>
+                <p>분</p>
+            </div>
+            <div class="card">
+                <div id="sec">00</div>
+                <p>초</p>
+            </div>
+        </div>
+        <div class="setting">
+            <input type="date" id="date">
+            <!-- <input type="time" id="time"> -->
+            <button id="dateBtn">설정</button>
+        </div>
+
+    </div>
+    <div class="footer">
+        © 2023. <a href="https://ozcodingschool.com/" target="_blank">ozcodingschool</a>. All rights
+        reserved. Developed by <a href="#">김혜민</a>.
+    </div>
+    <script>
+        // 밀리초로 환산 1초는 1000밀리초
+        const MIN = 1000 * 60
+        const HOUR = MIN * 60
+        const DAY = HOUR * 24
+
+        const goleDateDiv = document.getElementById('goleDate')
+        const dayDiv = document.getElementById('day')
+        const hourDiv = document.getElementById('hour')
+        const minDiv = document.getElementById('min')
+        const secDiv = document.getElementById('sec')
+
+        // 카운트 다운 기본값
+        let goleDate = new Date(2024, 5, 3, 0, 0, 0, 0)
+        print(goleDate)
+
+        function countDownFunction() {
+            const today = Date.now()
+            const gap = goleDate - today // 날짜 사이의 간격
+
+            if (goleDate > today) {
+                const 남은일 = String(Math.floor(gap / DAY)).padStart(2, '0');
+                const 남은시간 = String(Math.floor((gap % DAY) / HOUR)).padStart(2, '0');
+                const 남은분 = String(Math.floor((gap % HOUR) / MIN)).padStart(2, '0');
+                const 남은초 = String(Math.floor((gap % MIN) / 1000)).padStart(2, '0');
+
+                dayDiv.innerText = 남은일
+                hourDiv.innerText = 남은시간
+                minDiv.innerText = 남은분
+                secDiv.innerText = 남은초
+
+            } else {
+                clearInterval(countDown)
+
+                document.querySelector('.cards').classList.add('display-none')
+                // getElementsByClassName 으로 접근하지 않는 이유 :  HTMLCollection을 반환, 접근하려면 인덱스를 사용해야 함. 
+                // Ex ) document.getElementsByClassName('cards')[0].classList.add('display-none');
+                // 쿼리 셀렉터는 클래스명이 'cards'인 첫 번째 요소를 선택함.
+                goleDateDiv.innerText = "카운트다운이 종료되었습니다. 🙌"
+            }
+        }
+
+        // 화면에 날짜 뿌려주는 함수
+        function print(goleDate) {
+            goleDateDiv.innerText = `${goleDate.getFullYear()}년 ${goleDate.getMonth() + 1}월 ${goleDate.getDate()}일까지 남은 시간`
+        }
+        // 설정 버튼 눌렀을때 카운트다운 기준 날짜 바꾸기
+        document.getElementById('dateBtn').addEventListener("click", () => {
+            goleDate = document.getElementById('date').valueAsDate
+            print(goleDate)
+
+            // 날짜 설정시 +9 시간이 기본으로 추가됨. 
+            // 이를 삭제 해줌. 
+            goleDate = document.getElementById('date').valueAsDate.getTime() - (9 * HOUR);
+
+            // 카운트 재 시작
+            countDownFunction();
+
+            // 종료 되어서 멈춘 경우 디스플레이 다시 띄움. 
+            document.querySelector('.cards').classList.remove('display-none')
+            goleDateDiv.classList.remove('display-none')
+        })
+
+        // 카운트 시작
+        const countDown = setInterval(countDownFunction, 1000);
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- 
+Math.floor(gap / DAY): gap을 1일로 나누어서 현재 시간과 목표 날짜 간의 전체 일수를 구합니다. 이 부분은 남은 날짜를 계산합니다.
+Math.floor((gap % DAY) / HOUR): gap을 1일로 나누고 나머지를 1시간으로 나누어서 1일 단위의 나머지를 시간으로 환산합니다. 이 부분은 남은 날짜에서의 남은 시간을 계산합니다.
+Math.floor((gap % HOUR) / MINIT): gap을 1시간으로 나누고 나머지를 1분으로 나누어서 1시간 단위의 나머지를 분으로 환산합니다. 이 부분은 남은 시간에서의 남은 분을 계산합니다.
+Math.floor((gap % MINIT) / 1000): gap을 1분으로 나누고 나머지를 1초로 나누어서 1분 단위의 나머지를 초로 환산합니다. 이 부분은 남은 분에서의 남은 초를 계산합니다. 
+-->
