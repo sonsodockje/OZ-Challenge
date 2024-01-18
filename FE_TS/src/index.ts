@@ -1,8 +1,10 @@
-interface Dict<T> {
-  hi:<T>
-}
+// push 메서드로 새로운 요소를 큐의 뒤쪽에 추가하고, shift 메서드로 가장 앞쪽의 요소, 즉 가장 오래된 요소를 제거합니다.
 
-// 여기에 Dict<string> 타입의 객체를 생성하는 코드를 작성하세요.
-let obj  {
+// 여기에 Queue<T> 클래스를 구현하세요.
 
-}
+// 사용 예시
+const queue = new Queue<string>();
+queue.enqueue("Apple");
+queue.enqueue("Banana");
+console.log(queue.dequeue()); // Apple
+console.log(`Queue size: ${queue.size()}`); // Queue size: 1
